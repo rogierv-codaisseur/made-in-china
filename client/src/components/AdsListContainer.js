@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import AdsList from './AdsList';
+import CreateAdFormContainer from './CreateAdFormContainer';
 import { loadAds } from '../actions/ads';
 
 class AdsListContainer extends React.Component {
@@ -14,6 +15,7 @@ class AdsListContainer extends React.Component {
       <div>
         {!this.props.ads && 'Loading'}
         {this.props.ads && <AdsList ads={this.props.ads} />}
+        <CreateAdFormContainer />
       </div>
     );
   }
