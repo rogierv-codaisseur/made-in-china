@@ -4,8 +4,10 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import AdsListContainer from './components/AdsListContainer';
 import AdDetailsContainer from './components/AdDetailsContainer';
+import CreateAdFormContainer from './components/CreateAdFormContainer';
 
 import store from './store';
+import CreateUserFormContainer from './components/CreateUserFormContainer';
 
 class App extends Component {
   render() {
@@ -15,6 +17,8 @@ class App extends Component {
           <Route exact path='/' component={AdsListContainer} />
           <Route exact path='/ads' component={AdsListContainer} />
           <Route path='/ads/:id' component={AdDetailsContainer} />
+          <Route path='/create' component={CreateAdFormContainer} />
+          <Route path='/register' component={CreateUserFormContainer} />
         </Provider>
       </BrowserRouter>
     );

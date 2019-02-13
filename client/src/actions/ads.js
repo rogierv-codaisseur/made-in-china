@@ -39,9 +39,12 @@ export const loadAd = id => dispatch => {
     .catch(console.error);
 };
 
-export const createAd = data => dispatch => {
+export const createAd = data => (dispatch, getState) => {
+  const jwt = getState().currentUser;
+
   request
     .post(`${baseUrl}/ads`)
+    .set('Authorization', `Bearer ${jwt}`)
     .send(data)
     .then(response => {
       dispatch(adCreateSuccess(response.body));

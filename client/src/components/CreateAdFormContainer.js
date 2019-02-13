@@ -11,9 +11,9 @@ class CreateAdFormContainer extends React.Component {
     emailAddress: ''
   };
 
-  onChange = ad => {
+  onChange = event => {
     this.setState({
-      [ad.target.name]: ad.target.value
+      [event.target.name]: event.target.value
     });
   };
 
@@ -25,6 +25,7 @@ class CreateAdFormContainer extends React.Component {
       emailAddress: ''
     });
     this.props.createAd(this.state);
+    this.props.history.push('/');
   };
 
   render() {

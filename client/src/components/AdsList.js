@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const AdsList = props => {
   return (
     <div>
-      <h1>Advertisements</h1>
+      <h1>Made In China</h1>
       <table>
         <thead>
           <tr>
