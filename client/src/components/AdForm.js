@@ -3,38 +3,52 @@ import React from 'react';
 const AdForm = props => {
   return (
     <div>
+      <h1>Add advertisement</h1>
       <form onSubmit={props.onSubmit}>
-        <label htmlFor='title'>
-          Title:
+        <div className='mt3'>
+          <label htmlFor='title' className='db fw6 lh-copy f6'>
+            Title:
+          </label>
           <input
             type='text'
             id='title'
             name='title'
             value={props.values.title}
             onChange={props.onChange}
+            className='pa2 input-reset ba bg-transparent w-50'
           />
-        </label>
-        <label htmlFor='price'>
-          Price:
+        </div>
+        <div className='mt3'>
+          <label htmlFor='price' className='db fw6 lh-copy f6'>
+            Price:
+          </label>
           <input
             type='number'
             id='price'
             name='price'
             value={props.values.price}
             onChange={props.onChange}
+            className='pa2 input-reset ba bg-transparent w-50'
           />
-        </label>
-        <label htmlFor='email'>
-          E-mail:
+        </div>
+        <div className='mt3'>
+          <label htmlFor='email' className='db fw6 lh-copy f6'>
+            E-mail:
+          </label>
           <input
             type='text'
             id='emailAddress'
             name='emailAddress'
             value={props.values.emailAddress}
             onChange={props.onChange}
+            className='pa2 input-reset ba bg-transparent w-50'
           />
-        </label>
-        <input type='submit' value='Save' />
+        </div>
+        <input
+          className='b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib'
+          type='submit'
+          value='Save'
+        />
       </form>
     </div>
   );

@@ -2,29 +2,42 @@ import React from 'react';
 
 const CreateUserForm = props => {
   return (
-    <form onSubmit={props.onSubmit}>
-      <label htmlFor='email'>
-        Email Address:
+    <div>
+      <h1>Register</h1>
+      <form onSubmit={props.onSubmit}>
+        <div className='mt3'>
+          <label htmlFor='email' className='db fw6 lh-copy f6'>
+            Email Address
+          </label>
+          <input
+            type='email'
+            id='emailAddress'
+            name='emailAddress'
+            value={props.values.emailAddress}
+            onChange={props.onChange}
+            className='pa2 input-reset ba bg-transparent w-50'
+          />
+        </div>
+        <div className='mt3'>
+          <label htmlFor='password' className='db fw6 lh-copy f6'>
+            Password
+          </label>
+          <input
+            type='password'
+            id='password'
+            name='password'
+            value={props.values.password}
+            onChange={props.onChange}
+            className='pa2 input-reset ba bg-transparent w-50'
+          />
+        </div>
         <input
-          type='email'
-          id='emailAddress'
-          name='emailAddress'
-          value={props.values.emailAddress}
-          onChange={props.onChange}
+          className='b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib'
+          type='submit'
+          value='Register'
         />
-      </label>
-      <label htmlFor='password'>
-        Password:
-        <input
-          type='password'
-          id='password'
-          name='password'
-          value={props.values.password}
-          onChange={props.onChange}
-        />
-      </label>
-      <input type='submit' value='Register' />
-    </form>
+      </form>{' '}
+    </div>
   );
 };
 
