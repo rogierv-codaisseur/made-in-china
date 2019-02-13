@@ -9,7 +9,10 @@ const AdDetails = props => {
       <p>Price: {props.ad.price}</p>
       <p>Email address: {props.ad.emailAddress}</p>
       <p>Phone Number: {props.ad.phoneNumber}</p>
-      <Link to='/'>Home</Link>
+      <img width='200px' src={props.ad.pictureUrl} alt='' />
+      <div>
+        <Link to='/'>Home</Link>
+      </div>
     </div>
   );
 };

@@ -3,7 +3,8 @@ import React from 'react';
 const AdForm = props => {
   return (
     <div>
-      <h1>Add advertisement</h1>
+      <h1>Add Advertisement</h1>
+      <h2>添加广告</h2>
       <form onSubmit={props.onSubmit}>
         <div className='mt3'>
           <label htmlFor='title' className='db fw6 lh-copy f6'>

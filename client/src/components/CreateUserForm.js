@@ -4,6 +4,7 @@ const CreateUserForm = props => {
   return (
     <div>
       <h1>Register</h1>
+      <h2>寄存器</h2>
       <form onSubmit={props.onSubmit}>
         <div className='mt3'>
           <label htmlFor='email' className='db fw6 lh-copy f6'>
