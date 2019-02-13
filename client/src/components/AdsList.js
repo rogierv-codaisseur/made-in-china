@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AdsList = props => {
   return (
     <div>
-      {console.log(props.ads)}
+      <h1>Advertisements</h1>
       <table>
         <thead>
           <tr>
@@ -12,18 +13,14 @@ const AdsList = props => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Sample 1</td>
-            <td>123</td>
-          </tr>
-          <tr>
-            <td>Sample 2</td>
-            <td>345</td>
-          </tr>
-          <tr>
-            <td>Sample 3</td>
-            <td>456</td>
-          </tr>
+          {props.ads.map(ad => (
+            <tr key={ad.id}>
+              <td>
+                <Link to={`/ads/${ad.id}`}>{ad.title}</Link>
+              </td>
+              <td>{ad.price}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
