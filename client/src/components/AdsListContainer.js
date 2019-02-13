@@ -21,8 +21,8 @@ class AdsListContainer extends React.Component {
         <div>
           <AdsList ads={this.props.ads} currentUser={this.props.currentUser} />
           {!this.props.currentUser}
-          To create advertisements you need to log in. If you do not have an
-          account. Please <Link to='/register'>register here</Link>
+          To create advertisements you need to log in. <br /> If you do not have
+          an account, please <Link to='/register'>register here</Link>
           <LoginFormContainer />
         </div>
       );
