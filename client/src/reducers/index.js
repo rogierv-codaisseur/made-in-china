@@ -1,3 +1,5 @@
 import { combineReducers } from 'redux';
 
-export default combineReducers({});
+import ads from './ads';
+
+export default combineReducers({ ads });

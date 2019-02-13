@@ -1,8 +1,9 @@
 import React from 'react';
 
-const AdsList = () => {
+const AdsList = props => {
   return (
     <div>
+      {console.log(props.ads)}
       <table>
         <thead>
           <tr>
