@@ -40,6 +40,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], AdController.prototype, "getAll", null);
 __decorate([
+    routing_controllers_1.Authorized(),
     routing_controllers_1.Post('/ads'),
     routing_controllers_1.HttpCode(201),
     __param(0, routing_controllers_1.Body()),

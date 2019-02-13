@@ -4,7 +4,8 @@ import {
   Param,
   Post,
   HttpCode,
-  Body
+  Body,
+  Authorized
 } from 'routing-controllers';
 import Ad from './entity';
 
@@ -21,6 +22,7 @@ export default class AdController {
     return { ads };
   }
 
+  @Authorized()
   @Post('/ads')
   @HttpCode(201)
   createAd(@Body() ad: Ad) {

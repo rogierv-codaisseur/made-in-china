@@ -1,13 +1,26 @@
 import 'reflect-metadata';
-import { createKoaServer } from 'routing-controllers';
+import { createKoaServer, Action } from 'routing-controllers';
 import setupDb from './db';
 import AdController from './ads/controller';
+import UserController from './users/controller';
+import LoginController from './logins/controller';
+
+import { verify } from './jwt';
 
 const port = process.env.PORT || 4000;
 
 const app = createKoaServer({
   cors: true,
-  controllers: [AdController]
+  controllers: [AdController, UserController, LoginController],
+  authorizationChecker: (action: Action) => {
+    const header: string = action.request.headers.authorization;
+
+    if (header && header.startsWith('Bearer ')) {
+      const [, token] = header.split(' ');
+      return !!(token && verify(token));
+    }
+    return false;
+  }
 });
 
 setupDb()
